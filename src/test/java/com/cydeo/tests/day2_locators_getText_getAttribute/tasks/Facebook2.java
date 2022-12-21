@@ -1,15 +1,41 @@
 package com.cydeo.tests.day2_locators_getText_getAttribute.tasks;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 public class Facebook2 {
-    public static void main(String[] args) {
-        //  //
-        //        //TC #2: Facebook incorrect login title verification
-        //        //1. Open Chrome browser
-        //        //2. Go to https://www.facebook.com
-        //        //3. Enter incorrect username
-        //        //4. Enter incorrect password
-        //        //5. Verify title changed to:
-        //        //Expected: “Log into Facebook”
+    public static void main(String[] args) throws InterruptedException {
+
+              //TC #2: Facebook incorrect login title verification
+              //1. Open Chrome browser
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        //2. Go to https://www.facebook.com
+        driver.get("https://www.facebook.com");
+
+             //3. Enter incorrect username
+        WebElement userName = driver.findElement(By.id("email"));
+        userName.sendKeys("shdss");
+              //4. Enter incorrect password
+        WebElement password = driver.findElement(By.id("pass"));
+        password.sendKeys("paswrd" +Keys.ENTER);
+              //5. Verify title changed to:
+            //Expected: “Log into Facebook”
+        Thread.sleep(1000);
+        String expectedTitle = "Facebook'a Giriş Yap";
+        String actualTitle = driver.getTitle();
+
+        if (actualTitle.equals(expectedTitle)){
+            System.out.println("Title verification PASS!");
+        }else {
+            System.out.println("Title verification FAILED!");
+        }
     }
 }
 /*
