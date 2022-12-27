@@ -1,4 +1,4 @@
-package com.cydeo.tests.day3cssSelector_xpath;
+package com.cydeo.tests.day3_cssSelector_xpath;
 
 public class T5 {
     public static void main(String[] args) {

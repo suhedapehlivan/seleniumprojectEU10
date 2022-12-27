@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class T1_xpath_cssSelector_practice {
+public class T1_2_xpath_cssSelector_practice {
     public static void main(String[] args) {
         //XPATH and CSS Selector PRACTICES
         //DO NOT USE ANY DEVELOPER TOOLS TO GET ANY LOCATORS.
