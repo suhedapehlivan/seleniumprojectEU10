@@ -16,10 +16,10 @@ public class testCase2 {
 
         driver.get("https://library1.cydeo.com/login.html");
 
-        WebElement username= driver.findElement(By.xpath("//label[@for='inputEmail']"));
+        WebElement username= driver.findElement(By.xpath("//input[@id='inputEmail']"));
         username.sendKeys("student@cydeo");
 
-        WebElement password= driver.findElement(By.xpath("//label[@for='inputPassword']"));
+        WebElement password= driver.findElement(By.xpath("//input[@id='inputPassword']"));
         password.sendKeys("dfg");
 
         WebElement signInButton = driver.findElement(By.xpath("//button[@type='submit']"));
