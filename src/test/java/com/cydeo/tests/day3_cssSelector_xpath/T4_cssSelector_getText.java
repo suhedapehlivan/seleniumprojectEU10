@@ -23,7 +23,11 @@ public class T4_cssSelector_getText {
         //WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[class='login-btn']"));
 
         //locating reset password button using VALUE attribute and its value
-        WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[value='Reset password']"));
+        //WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[value='Reset password']"));
+// WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[class='login-btn']"));
+
+WebElement resetPasswordButton = driver.findElement(By.xpath("//button[@class='login-btn']"));
+
 
         String expectedResetPasswordButtonText = "Reset password";
         String actualResetPasswordButtonText = resetPasswordButton.getText();
