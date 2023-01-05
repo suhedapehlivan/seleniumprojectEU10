@@ -58,6 +58,13 @@ public class T5_Windows_Practice {
             driver.switchTo().window(each);
             System.out.println("Current title while switching windows: "+driver.getTitle());
         }
+        /*
+           for(String each: allWindowHandles){
+            if(driver.switchTo().window(each).getTitle().equals("New Window")){
+                driver.switchTo().window(each);
+            }
+        }
+         */
 
         //7. Assert: Title is “New Window”
         String expectedTitleAfterClick = "New Window";
