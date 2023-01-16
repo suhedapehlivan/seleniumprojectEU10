@@ -36,7 +36,7 @@ public class SmartbearExtraTask {
         //3. Enter username: “Tester”
         //4. Enter password: “test”
         //5. Click to Login button
-        SmartBearUtils.loginToSmartBear(driver,"Tester", "test" );
+        SmartBearUtils.loginToSmartBear(driver,"Tester", "test");
 
         //6. Print out count of all the links on landing page
       //(Locate all the links in the page.)
@@ -55,7 +55,7 @@ public class SmartbearExtraTask {
     }
 
     @Test
-    public void smartbearOrderPlacing(){
+    public void smartbearOrderPlacing() throws InterruptedException {
         //1. Open browser
         //2. Go to website:
         //http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx
@@ -84,9 +84,7 @@ public class SmartbearExtraTask {
         //• Generate: name, street, city, state, zip code
         Faker faker = new Faker();
 
-
-
-       WebElement name = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_txtName']"));
+        WebElement name = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_txtName']"));
        name.sendKeys(faker.name().fullName());
 
        WebElement street= driver.findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_TextBox2']"));
@@ -106,9 +104,10 @@ public class SmartbearExtraTask {
         WebElement visaButton = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_cardList_0']"));
         visaButton.click();
 
+        Thread.sleep(1000);
         //11. Generate card number using JavaFaker
         WebElement cardNumber = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_TextBox6']"));
-        cardNumber.sendKeys(faker.numerify("##################"));
+        cardNumber.sendKeys(faker.finance().creditCard().replaceAll("-", ""));
 
         WebElement expireDate =driver.findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_TextBox1']"));
         expireDate.sendKeys(faker.numerify("##/##"));
@@ -133,7 +132,7 @@ public class SmartbearExtraTask {
 
 
         //2. Click on View all orders
-        WebElement allOrdersClick= driver.findElement(By.xpath("//li[@class='selected']"));
+        WebElement allOrdersClick= driver.findElement(By.xpath("//a[.='View all orders']"));
         allOrdersClick.click();
 
         //3. Verify Susan McLaren has order on date “01/05/2010”
