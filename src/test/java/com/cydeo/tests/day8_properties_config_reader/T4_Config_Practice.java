@@ -37,7 +37,7 @@ public class T4_Config_Practice {
 
         //4- Verify title:
         //Expected: apple - Google Search
-        String expectedTitle = ConfigurationReader.getProperty("searchValue")+" - Google Search";
+        String expectedTitle = ConfigurationReader.getProperty("searchValue")+" - Google'da Ara";
         String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle);
