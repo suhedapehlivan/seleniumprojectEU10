@@ -79,3 +79,31 @@ public class Driver {
         }
     }
 }
+/*
+session_id for driver : "driver" --> driver_1209381203987askdf34098
+
+driver.get
+driver.findELement
+driver.maximize
+driver.method
+driver.quit(); --> driver_1209381203987askdf34098 --> session_id will be deleted, terminated, erased
+
+driver_session_id: driver_123098123019328adsf123
+
+How to handle Closing or Quitting driver with Driver utility class?
+
+--> When we created a new .getDriver() method in Driver utility class and implemeted Singleton design pattern.
+
+--> This design pattern requires my driver to be "driver == null (true)" to be able to generate a new driver.
+
+--> When we use default driver.quit() method that is coming from Selenium library, we terminate the existing driver session completely.
+
+--> This creates issue for our existing structure. Since driver is not null or session is completely deleted/terminated, we cannot continue with our execution of following tests.
+
+--> To solve this issue, we created Driver.closeDriver() method.
+--> In this method 2 thing are happening:
+    #1- We use driver.quit() to terminate the session and close browsers.
+    #2- Set the driver session value back to "null", so rest of our tests can be executed.
+
+
+ */
