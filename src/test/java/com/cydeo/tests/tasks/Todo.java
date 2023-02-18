@@ -38,6 +38,19 @@ public class Todo {
         actions.sendKeys(faker.animal().name()).perform();
         actions.sendKeys(Keys.ENTER).perform();
 
+        /*
+        Actions actions = new Actions(driver);
+
+        WebElement todo2= driver.findElement(By.xpath("(//label[@class='style-scope td-item'])[2]"));
+        actions.doubleClick(todo2).perform();
+
+        WebElement edit = driver.findElement(By.xpath("//input[@id='edit']"));
+        edit.sendKeys(Keys.chord(Keys.CONTROL, "a")+ Keys.BACK_SPACE);
+        //chord   bu method sayesinde 2 action aynı anda kullanılabiliyor
+
+        todo.sendKeys("earth"+ Keys.ENTER);
+         */
+
 
 
 
